@@ -17,6 +17,12 @@ router.get('/', async(req,res) =>{
     res.json(entrenadores);
 });
 
+//METODO GET PARA UN SOLO ENTRENADOR
+router.get('/:id', async (req, res) =>{
+    const entrenadores = await Entrenadores.findById(req.params.id);
+    res.json(entrenadores);
+});
+
 
 //METODO POST PARA AÑADIR ENTRENADORES
 router.post('/', async (req, res) =>{
